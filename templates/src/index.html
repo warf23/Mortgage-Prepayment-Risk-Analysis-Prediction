@@ -1,0 +1,352 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/dist/output.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link href="{{ url_for('static', filename='css/Style.css') }}" rel="stylesheet">
+
+  <link href="{{ url_for('static', filename='assets/logo.png') }}" rel="icon">
+  <title>Mortgage Guard</title>
+</head>
+<body >
+
+<!-- Landing Page -->
+<section class="landin_page h-landing-hight ">
+    <div class="bg-white">
+        <header class="absolute inset-x-0 top-0 z-50 ">
+          <nav class="flex items-center justify-between pt-8 lg:px-16" >
+            <div class="flex lg:flex-1">
+                <div class="logo flex flex-row gap-3 items-center">
+                    <img src="{{ url_for('static', filename='assets/logo.png') }} " alt="logo" class="">
+                    <a class="flex flex-row gap-2 font-roboto-slab ">
+                        <p class="text-xl font-semibold ">Mortgage </p>
+                        <p class="text-xl font-extrabold text-[#2563EB] ">Guard </p>
+
+                      
+                    </a>
+                </div>
+            </div>
+           
+            <div class="flex lg:hidden">
+              <button type="button" id="openMobileMenuButton" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                <span class="sr-only">Open main menu</span>
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+              </button>
+            </div>
+            <div   class="hidden lg:flex lg:gap-x-12">
+              <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Home</a>
+              <a href="#" class="text-sm font-semibold leading-6 text-gray-900">FAQ</a>
+              <a href="#" class="text-sm font-semibold leading-6 text-gray-900">How it work ?</a>
+              <a href="https://www.linkedin.com/in/mohammed-agrat/" class="text-sm font-semibold leading-6 text-gray-900">Contact Us</a>
+            </div>
+            <div class="hidden lg:flex lg:flex-1 lg:justify-end  ">
+              <a href="#" class="rounded-md w-  px-3.5 py-2.5 text-sm font-semibold shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Login  <span aria-hidden="true">→</span> </a>
+                
+            </div>
+          </nav>
+          <!-- Mobile menu, show/hide based on menu open state. -->
+    <!-- Mobile menu, show/hide based on menu open state. -->
+     <!-- Mobile menu, show/hide based on menu open state. -->
+     <div class="lg:hidden" id="mobileMenu"  role="dialog" aria-modal="true">
+      <!-- Background backdrop, show/hide based on slide-over state. -->
+      <div class="fixed inset-0 z-50"></div>
+      <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <div class="flex items-center justify-between">
+          <a href="#" class="-m-1.5 p-1.5">
+            <span class="sr-only">Your Company</span>
+            <img class="h-8 w-auto" src="{{ url_for('static', filename='assets/logo.png') }}" alt="">
+          </a>
+          <button type="button" id="Closebtn" class=" -m-2.5 rounded-md p-2.5 text-gray-700">
+            <span class="sr-only">Close menu</span>
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="mt-6 flow-root">
+          <div class="-my-6 divide-y divide-gray-500/10">
+            <div class="space-y-2 py-6">
+              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Home</a>
+              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">F&Q</a>
+              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">How it work ?</a>
+              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contact Us</a>
+            </div>
+            <div class="py-6">
+              <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        </header>
+
+
+        <div class="main-content relative isolate px-8 pt-2 pb-8  lg:px-8">
+          <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" >
+            <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+          </div>
+          <div class="mx-auto max-w-2xl py-32 sm:py-48 ">
+            <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+              <div class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                👋 Want to learn more about this data  <a href="#" class="font-semibold text-indigo-600"><span class="absolute inset-0" aria-hidden="true"></span>Read more  <span aria-hidden="true">&rarr;</span></a>
+              </div>
+            </div>
+            <div class="text-center">
+              <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl"> Mortgage Risk at <span class="text-[#2563EB] mt">Your Fingertips</span></h1>
+              <p class="mt-6 text-lg leading-8 text-gray-600">Welcome to a new era of financial empowerment with our cutting-edge mortgage risk prediction app. Experience the confidence of making informed decisions as you navigate the world of mortgages</p>
+              <div class="mt-10 flex items-center justify-center gap-x-6">
+                <a href="{{ url_for('predict_datapoint') }}" class="rounded-md w-36 bg-[#2563EB] px-3.5 py-2.5 text-white text-sm font-semibold shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get started</a>
+                <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Learn more <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </div>
+         
+          
+    </div>
+    </div>
+    
+</section>
+
+<div class="relative svg-lawi " >
+   
+        <img class="custom-absolute-top" src="{{ url_for('static', filename='assets/bank.png') }}" alt="">
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 423" fill="none">
+        <path opacity="0.436125" d="M796.393 3.62132C934.998 -2.35141 1084.73 -1.11321 1217.65 8.6596C1351.48 18.4988 1452.79 39.8514 1555.36 59.4241C1658.04 79.0167 1796.61 96.719 1823.95 124.35C1852.68 153.391 1719.74 179.684 1703.43 209.096C1689.91 233.464 1745.64 257.265 1736.66 281.714C1726.64 309.017 1744.48 341.593 1647.59 361.229C1547.82 381.45 1369.37 372.634 1236.41 383.102C1121.29 392.164 1035.76 412.943 915.477 418.864C792.814 424.902 661.023 424.255 539.461 417.409C419.567 410.656 337.6 388.776 221.567 379.782C76.0558 368.503 -142.618 383.306 -229.951 357.768C-318.363 331.914 -148.789 296.808 -167.975 265.871C-184.43 239.339 -332.366 219.947 -331.999 193.218C-331.637 166.834 -219.495 146.059 -165.998 121.869C-108.723 95.9702 -122.014 59.9053 -2.56912 44.2546C122.277 27.8963 298.165 49.4095 443.369 42.0248C574.659 35.3477 663.929 9.32941 796.393 3.62132Z" fill="#2563EB"/>
+    </svg>
+    <img class="bank" src="{{ url_for('static', filename='assets/bank22.svg') }}" alt="" srcset="" >
+    <svg class="line_bank_to_bank" xmlns="http://www.w3.org/2000/svg" width="933" height="343" viewBox="0 0 933 343" fill="none">
+        <path d="M3.83867 33.8902L0.217024 29.7234C5.53369 28.148 10.9595 26.6185 16.3411 25.1755L19.8046 29.3872C14.4767 30.8158 9.11116 32.3329 3.83867 33.8902ZM866.28 280.144C862.653 276.051 858.906 271.929 855.136 267.89L860.311 266.151C864.11 270.226 929.183 337.992 932.843 342.125L866.28 280.144ZM36.0724 25.2485L32.7666 20.9997C38.2691 19.6734 43.8931 18.3931 49.4803 17.1923L52.6237 21.4825C47.0908 22.6668 41.5213 23.9365 36.0724 25.2485ZM843.543 255.787C839.613 251.788 835.563 247.769 831.509 243.846L836.449 241.869C840.545 245.831 844.634 249.888 848.601 253.927L843.543 255.787ZM69.4475 18.0838L66.471 13.7614C72.1419 12.6894 77.9467 11.6635 83.726 10.7147L86.5321 15.0694C80.8092 16.0069 75.0607 17.0215 69.4475 18.0838ZM819.04 232.078C814.832 228.198 810.489 224.299 806.149 220.495L810.836 218.284C815.218 222.126 819.601 226.063 823.857 229.983L819.04 232.078ZM103.86 12.4369L101.23 8.05709C107.09 7.23872 113.059 6.47732 118.968 5.79253L121.432 10.1978C115.574 10.8699 109.665 11.6267 103.86 12.4369ZM792.839 209.107C788.358 205.363 783.744 201.601 779.125 197.925L783.541 195.486C788.205 199.199 792.868 203 797.393 206.782L792.839 209.107ZM139.201 8.34407L136.919 3.9213C142.934 3.36561 149.044 2.87144 155.083 2.45274L157.173 6.88711C151.204 7.30507 145.154 7.7972 139.201 8.34407ZM765.016 186.963C760.253 183.35 755.383 179.741 750.522 176.23L754.647 173.57C759.552 177.116 764.48 180.764 769.291 184.413L765.016 186.963ZM175.347 5.83741L173.44 1.39171C179.565 1.10587 185.797 0.883308 191.965 0.732805L193.683 5.18529C187.578 5.33213 181.408 5.5516 175.347 5.8353L175.347 5.83741ZM735.652 165.739C730.645 162.291 725.519 158.845 720.418 155.498L724.231 152.616C729.387 155.999 734.564 159.48 739.621 162.963L735.652 165.739ZM212.181 4.93706L210.655 0.481305C216.89 0.466362 223.223 0.521284 229.477 0.642513L230.809 5.09638C224.614 4.97477 218.346 4.92133 212.181 4.93706ZM704.842 145.518C699.605 142.245 694.25 138.98 688.924 135.812L692.406 132.732C697.79 135.933 703.2 139.231 708.492 142.539L704.842 145.518ZM249.552 5.66839L248.414 1.21958C254.729 1.48024 261.136 1.81191 267.462 2.20898L268.4 6.64621C262.144 6.2484 255.801 5.91925 249.552 5.66839ZM672.679 126.395C667.23 123.311 661.661 120.24 656.131 117.266L659.269 113.991C664.858 116.996 670.486 120.1 675.992 123.217L672.679 126.395ZM287.337 8.02668L286.594 3.60433C292.959 4.13686 299.419 4.74768 305.797 5.41861L306.335 9.82374C300.025 9.15992 293.633 8.55678 287.337 8.02668ZM639.292 108.434C633.653 105.556 627.894 102.69 622.173 99.9206L624.954 96.4636C630.734 99.2628 636.556 102.157 642.255 105.067L639.292 108.434ZM325.38 12.0296L325.035 7.64775C331.433 8.45533 337.918 9.34248 344.315 10.2864L344.449 14.6391C338.135 13.7061 331.712 12.8263 325.38 12.0296ZM604.791 91.7309C598.984 89.0687 593.054 86.4227 587.165 83.8693L589.576 80.243C595.527 82.823 601.52 85.4962 607.39 88.1876L604.791 91.7309ZM363.541 17.6541L363.605 13.3328C370 14.4098 376.485 15.5705 382.882 16.7811L382.617 21.0678C376.289 19.8675 369.87 18.7187 363.542 17.652L363.541 17.6541ZM569.315 76.3451C563.35 73.9033 557.273 71.4877 551.252 69.1657L553.284 65.3834C559.369 67.7304 565.51 70.171 571.536 72.6426L569.315 76.3451ZM401.666 24.8808L402.133 20.6359C408.521 21.982 414.984 23.4123 421.335 24.8859L420.668 29.0863C414.38 27.6273 407.987 26.2135 401.666 24.8808ZM532.994 62.3342C526.919 60.1326 520.719 57.9554 514.567 55.8639L516.217 51.9429C522.433 54.0584 528.699 56.2553 534.838 58.4825L532.994 62.3342ZM439.606 33.6782L440.47 29.525C446.819 31.1323 453.242 32.827 459.565 34.5626L458.499 38.663C452.245 36.9424 445.887 35.2685 439.606 33.6782ZM495.98 49.7548C490.065 47.8757 484.034 46.0228 478.061 44.25L477.298 44.0232L478.563 39.9799L479.328 40.2071C485.371 42.001 491.457 43.8709 497.436 45.7704L495.98 49.7548Z" fill="#262626"/>
+        </svg>
+</div>
+
+
+
+<div class="overflow-hidden bg-white py-24 sm:py-32">
+  <div class=" absolute -z-10 transform-gpu overflow-hidden blur-3xl " >
+    <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+  </div>
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+        <div class="lg:pr-8 lg:pt-4">
+          <div class="lg:max-w-lg">
+            
+            <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">How it Work our App 🧩</p>
+            <p class="mt-6 text-lg leading-8 text-gray-600">Curious about your loan status? Our web application leverages advanced machine learning algorithms to offer accurate predictions.</p>
+            <dl class="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
+              <div class="relative pl-9">
+                <dt class="inline font-semibold text-gray-900">
+                 
+                    📝 Input Loan Information:
+                </dt>
+                <dd class="inline">Begin by providing essential loan details, including your credit score, loan amount, and property information. This step helps our app gain a comprehensive understanding of your mortgage context.</dd>
+              </div>
+              <div class="relative pl-9">
+                <dt class="inline font-semibold text-gray-900">
+                  
+                    🔮 Click "Predict"
+                </dt>
+                <dd class="inline">After entering your information, click the "Predict" button to initiate the analysis. This is where the magic happens! Our state-of-the-art machine learning algorithms kick in to process your data.</dd>
+              </div>
+              <div class="relative pl-9">
+                <dt class="inline font-semibold text-gray-900">
+                  
+                    🔍 Prediction Generation:
+                </dt>
+                <dd class="inline">Within moments, our algorithms generate a prediction based on the analysis. This prediction offers insights into whether you're likely to face <span class="font-extrabold ">delinquency on your loan or not. and Also the Prepayment Risk </span></dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+        
+<!-- Lpatop  -->
+
+
+<div class="flex flex-col gap-10">
+<div class="laptoop">
+<div class="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[8px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]">
+  <div class="rounded-lg overflow-hidden h-[156px] md:h-[278px] bg-white dark:bg-gray-800">
+      <img src="{{ url_for('static', filename='assets/laptoop.png') }}" class="h-full w-full" alt="" srcset="">
+  </div>
+</div>
+<div class="relative mx-auto bg-gray-900 dark:bg-gray-700 rounded-b-xl rounded-t-sm h-[17px] max-w-[351px] md:h-[21px] md:max-w-[597px]">
+  <div class="absolute left-1/2 top-0 -translate-x-1/2 rounded-b-xl w-[56px] h-[5px] md:w-[96px] md:h-[8px] bg-gray-800"></div>
+</div>
+</div>
+<div class="phoone">
+  <div class="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[600px] w-[300px]">
+    <div class="h-[32px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -left-[17px] top-[72px] rounded-l-lg"></div>
+    <div class="h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -left-[17px] top-[124px] rounded-l-lg"></div>
+    <div class="h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -left-[17px] top-[178px] rounded-l-lg"></div>
+    <div class="h-[64px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -right-[17px] top-[142px] rounded-r-lg"></div>
+    <div class="rounded-[2rem] overflow-hidden w-[272px] h-[572px] bg-white dark:bg-gray-800">
+
+      <img src="{{ url_for('static', filename='assets/phoone.png') }}" alt="" srcset="">
+ </div>
+</div>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+  
+<!-- Landing page -->
+
+  
+
+<!-- F1Q -->
+<section class="bg-[#F6F4EB] ">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+      <h2 class="flex items-center mb-8 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Frequently asked questions</h2>
+      <div class="grid pt-8 text-left border-t border-gray-200 md:gap-16 dark:border-gray-700 md:grid-cols-2">
+          <div>
+              <div class="mb-10">
+                  <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                      <svg class="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>
+                      What is the purpose of this web app?
+                  </h3>
+                  <p class="text-gray-500 dark:text-gray-400">
+                    
+                    This web app is designed to help users assess the risk of prepayment for mortgage loans. By entering various loan and borrower details, the app provides insights into the likelihood of prepayment based on historical data.
+              </div>
+              <div class="mb-10">                        
+                  <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                      <svg class="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>
+                      How does the app calculate prepayment risk?
+                  </h3>
+                  <p class="text-gray-500 dark:text-gray-400">
+                    The app uses a regression algorithm that takes into account factors such as loan amount, interest rate, credit score, loan term, and more. It then predicts the likelihood of prepayment based on these inputs.
+                  </p>
+              </div>
+              <div class="mb-10">
+                  <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                      <svg class="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>
+                      How accurate are the predictions ?
+                  </h3>
+                  <p class="text-gray-500 dark:text-gray-400">The accuracy of predictions can vary based on the quality of the input data and the model's performance. It's important to note that this app provides estimates and should not be considered financial advice.</p>
+              </div>
+              <div class="mb-10">
+                  <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                      <svg class="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>
+                      What is prepayment risk?
+                  </h3>
+                  <p class="text-gray-500 dark:text-gray-400">Prepayment risk refers to the possibility that borrowers will pay off their mortgage loans earlier than their scheduled payment dates. This can impact lenders and investors, leading to potential changes in expected cash flows.</p>
+                  <p class="text-gray-500 dark:text-gray-400">Find out more information by <a href="#" class="font-medium underline text-primary-600 dark:text-primary-500 hover:no-underline">reading the license</a>.</p>
+              </div>
+          </div>
+          <div>
+              <div class="mb-10">
+                  <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                      <svg class="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>
+                      Can I use this app for different types of mortgages?
+                  </h3>
+                  <p class="text-gray-500 dark:text-gray-400">No, the app can be used Only four <span class="font-semibold">fixed-rate mortgages </span></p>
+              </div>
+              <div class="mb-10">
+                  <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                      <svg class="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>
+                      Can I trust the predictions provided by the app?
+                  </h3>
+                  <p class="text-gray-500 dark:text-gray-400">The predictions are generated using historical data and a regression algorithm. While the app aims to provide accurate estimates, it's important to understand that predictions may not account for all variables that can influence prepayment behavior.</p>
+              </div>
+              <div class="mb-10">
+                  <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                      <svg class="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>
+                      Are there any fees associated with using this app?
+                  </h3>
+                  <p class="text-gray-500 dark:text-gray-400">No, using this web app is free of charge. It's designed to provide users with valuable insights into prepayment risk without any costs.</p>
+              </div>
+              <div class="mb-10">
+                  <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                      <svg class="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>
+                      What if my loan information changes after I've used the app?
+                  </h3>
+                  <p class="text-gray-500 dark:text-gray-400">If your loan information changes (e.g., interest rate adjustment, loan modification), it's a good idea to re-evaluate prepayment risk using the updated details for a more accurate assessment.</p>
+               
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- FAQ -->
+
+
+
+
+<!-- Footer  -->
+<div>
+<footer class="bg-white rounded-lg shadow m-4">
+    <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <div class="flex lg:flex-1">
+                <div class="logo flex flex-row gap-3 items-center">
+                    <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="logo" class="">
+                    <div class="flex flex-row gap-2 font-roboto-slab ">
+                        <p class="text-xl font-semibold ">Mortgage </p>
+                        <p class="text-xl font-extrabold text-primary ">Guard </p>
+
+                      
+                    </div>
+                </div>
+            </div>
+            <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+                <li>
+                    <a href="#" class="mr-4 hover:underline md:mr-6 ">About</a>
+                </li>
+                <li>
+                    <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
+                </li>
+                <li>
+                    <a href="#" class="mr-4 hover:underline md:mr-6 ">Licensing</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">©Agrat Mohammed 2023 . All Rights Reserved.</span>
+    </div>
+</footer>
+</div>
+<!-- End Footer  -->
+
+
+  
+      
+
+    <!-- Expalnation of work  -->
+    
+
+    
+      
+    <script src="/dist/output.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+   
+
+
+    <script>
+      const openMobileMenuButton = document.querySelector('#openMobileMenuButton');
+      const mobileMenu = document.querySelector('#mobileMenu');
+      const Closebtn = document.querySelector('#Closebtn');
+  
+      openMobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden'); // Toggle the 'hidden' class to show/hide the menu
+      });
+      Closebtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden'); // Toggle the 'hidden' class to show/hide the menu
+        });
+  
+    </script>
+    
+
+
+</body>
+</html>

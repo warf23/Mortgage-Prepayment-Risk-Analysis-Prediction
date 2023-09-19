@@ -1,0 +1,827 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/dist/output.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link href="{{ url_for('static', filename='css/Style.css') }}" rel="stylesheet">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
+  <title>Mortgage Risk</title>
+  <link href="{{ url_for('static', filename='assets/logo.png') }}" rel="icon">
+
+
+</head>
+<body class="bg-[#F6F4EB]" >
+
+<div id="main-content">
+<!-- Landing Page -->
+<section class="landin_page  h-landing-hight">
+    <div class="bg-[#F6F4EB]">
+        <header class="">
+          <nav class="flex items-center justify-between pt-8 lg:px-16" >
+            <div class="flex lg:flex-1">
+                <div  class="logo flex flex-row gap-3 items-center">
+                    <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="logo" class="">
+                    <a href="#" class="flex flex-row gap-2 font-roboto-slab ">
+                        <p class="text-xl font-semibold ">Mortgage </p>
+                        <p class="text-xl font-extrabold text-[#2563EB] ">Guard </p>
+
+                      
+                    </a>
+                </div>
+            </div>
+           
+            <div class="flex lg:hidden">
+              <button type="button" id="openMobileMenuButton" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                <span class="sr-only">Open main menu</span>
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+              </button>
+            </div>
+            <div   class="hidden lg:flex lg:gap-x-12">
+              <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Home</a>
+              <a href="#" class="text-sm font-semibold leading-6 text-gray-900">FAQ</a>
+              <a href="#" class="text-sm font-semibold leading-6 text-gray-900">How it work ?</a>
+              <a href="https://www.linkedin.com/in/mohammed-agrat/" class="text-sm font-semibold leading-6 text-gray-900">Contact Us</a>
+            </div>
+            <div class="hidden lg:flex lg:flex-1 lg:justify-end  ">
+              <a href="#" class="rounded-md w-  px-3.5 py-2.5 text-sm font-semibold shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Login  <span aria-hidden="true">→</span> </a>
+                
+            </div>
+          </nav>
+          <!-- Mobile menu, show/hide based on menu open state. -->
+    <!-- Mobile menu, show/hide based on menu open state. -->
+
+        </header>  
+          <!-- Expalnation of work  -->
+    
+    </div>
+</section>
+<!-- Predict Section  -->
+
+
+
+<form action="{{ url_for('predict_datapoint')}}" method="post"  onsubmit="handlePrediction()"  >
+<main class="cc   py-16 flex flex-col " >
+    <div class=" flex items-center gap-6  ">
+            <h1 class="header-1 ">Loan Details</h1>
+            <div class="line_header"></div>
+    </div>
+    <p class="paragraph_details pt-3">Providing accurate information ensures that the predictions are tailored to your unique loan terms and financial situation.</p>
+    <div class="First_time_home flex pt-4 items-center gap-8">
+      <label class="input_label" for="FirstTimeHomebuyer">Is it Your First Time Home Buyer ? </label>
+      <div class="options flex items-center gap-4">
+            <div class="flex items-center ">
+                <input id="FirstTimeHomebuyer" type="radio" value="Y" name="FirstTimeHomebuyer" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label for="FirstTimeHomebuyer" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Yes</label>
+            </div>
+            <div class="flex items-center">
+                <input checked id="FirstTimeHomebuyer" type="radio" value="N" name="FirstTimeHomebuyer" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label for="FirstTimeHomebuyer" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">No</label>
+            </div>
+      </div>
+      </select>
+    </div>
+    <div class="thre_div1 grid gap-6 mb-6 pt-4 md:grid-cols-3 ">
+      <div>
+        <label for="MIP" class="block flex mb-2 text-sm font-medium text-gray-900 dark:text-white">MIP
+
+          
+          <p class="flex items-center text-sm text-gray-500 dark:text-gray-400"><button data-popover-target="popover-click" data-popover-trigger="click" data-popover-placement="bottom-end" type="button"><svg class="w-4 h-4 ml-2 text-gray-400 hover:text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg><span class="sr-only">Show information</span></button></p>
+          <div data-popover id="popover-click" role="tooltip" class="absolute z-10 invisible inline-block text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400">
+              <div class="p-3 space-y-2">
+                  <h3 class="font-semibold text-gray-900 dark:text-white">Mortgage Insurance Premium</h3>
+                  <p>MIP is a type of insurance required for certain mortgages with a lower down payment. It protects the lender in case the borrower defaults on the loan. The MIP amount is typically calculated based on the loan-to-value ratio and loan amount.</p>
+                  <h3 class="font-semibold text-gray-900 dark:text-white">Example</h3>
+                  <p>If you're taking out a $200,000 mortgage with a 3.5% down payment, the MIP could be around $2,000. This amount is usually added to your monthly mortgage payments.</p>
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+            </svg></a>
+              </div>
+              <div data-popper-arrow></div>
+          </div>
+        
+        </label>
+  <div class="flex">
+    <span class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
+     %
+    </span>
+    <input id="MIP" name="MIP" type="number" class="rounded-none rounded-r-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="12 % ">
+  </div>
+      </div>
+    <div>
+      <label for="OCLTV" class="flex mb-2 text-sm font-medium text-gray-900 dark:text-white">OCLTV
+         <p class="flex items-center text-sm text-gray-500 dark:text-gray-400"><button data-popover-target="popover-click_OCLTV" data-popover-trigger="click" data-popover-placement="bottom-end" type="button"><svg class="w-4 h-4 ml-2 text-gray-400 hover:text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg><span class="sr-only">Show information</span></button></p>
+          <div data-popover id="popover-click_OCLTV" role="tooltip" class="absolute z-10 invisible inline-block text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400">
+              <div class="p-3 space-y-2">
+                  <h3 class="font-semibold text-gray-900 dark:text-white">Original Combined Loan-to-Value</h3>
+                  <p>OCLTV, which stands for Original Combined Loan-to-Value, is a critical metric in mortgage evaluation. It represents the total of all loans secured by a property in relation to its appraised value at the time of origination.</p>
+                  <h3 class="font-semibold text-gray-900 dark:text-white">Example</h3>
+                  <p>Suppose your property is appraised at $300,000, and you have two loans totaling $240,000. Your OCLTV would be 80% ($240,000 / $300,000 * 100), indicating that you've borrowed 80% of your home's value.</p>
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+            </svg></a>
+              </div>
+              <div data-popper-arrow></div>
+          </div>
+      </label>
+<div class="flex">
+  <span class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
+    %
+  </span>
+  <input type="text" id="OCLTV" name="OCLTV"  class="rounded-none rounded-r-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="5 %">
+</div>
+    </div>
+    <div>
+      <label for="DTI" class=" flex mb-2 text-sm font-medium text-gray-900 dark:text-white">DTI
+
+        <p class="flex items-center text-sm text-gray-500 "><button data-popover-target="popover-click_DTI" data-popover-trigger="click" data-popover-placement="bottom-end" type="button"><svg class="w-4 h-4 ml-2 text-gray-400 hover:text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg><span class="sr-only">Show information</span></button></p>
+        <div data-popover id="popover-click_DTI" role="tooltip" class="absolute z-10 invisible inline-block text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400">
+            <div class="p-3 space-y-2">
+                <h3 class="font-semibold text-gray-900 dark:text-white">Debt-to-Income Ratio</h3>
+                <p>The DTI, or Debt-to-Income Ratio, is a crucial financial metric used in mortgage assessment. It compares your total monthly debt payments to your gross monthly income and is typically expressed as a percentage.</p>
+                
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+          </svg></a>
+            </div>
+            <div data-popper-arrow></div>
+        </div>
+
+      </label>
+<div class="flex">
+  <span class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
+    %
+  </span>
+  <input type="text" id="DTI" name="DTI"  class="rounded-none rounded-r-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="20 % ">
+</div>
+    </div>
+
+    </div>
+    <div class="thre_div2 grid gap-6 mb-6 pt-4 md:grid-cols-3 ">
+      <div>
+        <label for="OrigUPB" class="block flex mb-2 text-sm font-medium text-gray-900 dark:text-white">Original Unpaid Principal Balance
+          
+
+          <p class="flex items-center text-sm text-gray-500 dark:text-gray-400"><button data-popover-target="popover-click_OriginUPD" data-popover-trigger="click" data-popover-placement="bottom-end" type="button"><svg class="w-4 h-4 ml-2 text-gray-400 hover:text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg><span class="sr-only">Show information</span></button></p>
+          <div data-popover id="popover-click_OriginUPD" role="tooltip" class="absolute z-10 invisible inline-block text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400">
+              <div class="p-3 space-y-2">
+                  <h3 class="font-semibold text-gray-900 dark:text-white">Original Unpaid Principal Balance</h3>
+                  <p>The Original Unpaid Principal Balance refers to the initial loan amount borrowed for your mortgage, excluding any interest or payments made toward the principal. This balance serves as the foundation for calculating interest and determining your monthly mortgage payments.</p>
+                  <h3 class="font-semibold text-gray-900 dark:text-white">Example</h3>
+                  <p>Let's say you took out a mortgage for $200,000 to purchase your home. This $200,000 is your Original Unpaid Principal Balance—the starting point for your loan</p>
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+            </svg></a>
+              </div>
+              <div data-popper-arrow></div>
+          </div>
+
+
+
+       
+        </label>
+  <div class="flex">
+    <span class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
+     $
+    </span>
+    <input id="OrigUPB" name="OrigUPB" step="50000" type="number" class="rounded-none rounded-r-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="200 000 $">
+  </div>
+      </div>
+    <div>
+      <label for="OrigInterestRate" class="flex mb-2 text-sm font-medium text-gray-900 dark:text-white">Original Interest Rate 
+
+
+
+        <p class="flex items-center text-sm text-gray-500 dark:text-gray-400"><button data-popover-target="popover-click_Originrate" data-popover-trigger="click" data-popover-placement="bottom-end" type="button"><svg class="w-4 h-4 ml-2 text-gray-400 hover:text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg><span class="sr-only">Show information</span></button></p>
+        <div data-popover id="popover-click_Originrate" role="tooltip" class="absolute z-10 invisible inline-block text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400">
+            <div class="p-3 space-y-2">
+                <h3 class="font-semibold text-gray-900 dark:text-white">Original Interest Rate</h3>
+                <p>The Original Interest Rate signifies the initial annual interest percentage applied to your mortgage loan when it's originated. This rate influences the amount of interest you'll pay over the life of the loan.</p>
+                <h3 class="font-semibold text-gray-900 dark:text-white">Example</h3>
+                <p>Suppose your mortgage was initiated with an Original Interest Rate of 4.5%. This means that for a loan of $250,000, the yearly interest charged would be $11,250 ($250,000 * 0.045). As time passes and you make payments, the portion of your payment allocated to interest will change, affecting your overall interest cost.</p>
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+          </svg></a>
+            </div>
+            <div data-popper-arrow></div>
+        </div>
+
+
+      </label>
+<div class="flex">
+  <span class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
+    %
+  </span>
+  <input type="text" id="OrigInterestRate" name="OrigInterestRate"  step="5" class="rounded-none rounded-r-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="15 %">
+</div>
+    </div>
+    <div>
+      <label for="OrigLoanTerm" class="flex mb-2 text-sm font-medium text-gray-900 dark:text-white">Original Loan Term
+
+        <p class="flex items-center text-sm text-gray-500 dark:text-gray-400"><button data-popover-target="popover-click_Original_loan_tearm" data-popover-trigger="click" data-popover-placement="bottom-end" type="button"><svg class="w-4 h-4 ml-2 text-gray-400 hover:text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg><span class="sr-only">Show information</span></button></p>
+          <div data-popover id="popover-click_Original_loan_tearm" role="tooltip" class="absolute z-10 invisible inline-block text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400">
+              <div class="p-3 space-y-2">
+                  <h3 class="font-semibold text-gray-900 dark:text-white">Original Loan Term</h3>
+                  <p>The Original Loan Term refers to the predetermined length of time, typically stated in years, over which you'll be repaying your mortgage. This term plays a significant role in determining your monthly payments and the total interest paid.</p>
+                  <h3 class="font-semibold text-gray-900 dark:text-white">Convert Years To Months</h3>
+                  <p>Please Enter your year & Click in Convert then copy-Past your months  </p>
+                  <div class="flex flex-col">
+                      <input id="years" class="rounded-none rounded-r-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="number" placeholder="30 years">
+                      <button id="convertBtn" class="rounded-md w-full hover:bg-[#2563EB] my-4 bg-blue-500 px-3.5 py-2.5 text-white " type="button">Covert</button>
+                      <div id="result" class="select-auto rounded-none rounded-r-lg h-10 bg-gray-50 border  ">
+                        
+                      </div>
+                  </div>
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+            </svg></a>
+              </div>
+              <div data-popper-arrow></div>
+          </div>
+      </label>
+<div class="flex">
+  <span class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
+    months
+  </span>
+  <input type="text" id="OrigLoanTerm" name="OrigLoanTerm"  class="rounded-none rounded-r-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="56  ">
+</div>
+    </div>
+
+    </div>
+    <div class="thre_div3 grid gap-6 mb-6 pt-4 md:grid-cols-2 ">
+      <div>
+        <label for="NumBorrowers" class="flex  mb-2 text-sm font-medium text-gray-900 dark:text-white">Number of Borrowers
+
+
+
+          <p class="flex items-center text-sm text-gray-500 "><button data-popover-target="popover-click_Borrowers" data-popover-trigger="click" data-popover-placement="bottom-end" type="button"><svg class="w-4 h-4 ml-2 text-gray-400 hover:text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg><span class="sr-only">Show information</span></button></p>
+        <div data-popover id="popover-click_Borrowers" role="tooltip" class="absolute z-10 invisible inline-block text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400">
+            <div class="p-3 space-y-2">
+                <h3 class="font-semibold text-gray-900 dark:text-white">Number of Borrowers</h3>
+                <p>The Number of Borrowers refers to the count of individuals who are jointly applying for a mortgage loan. This count can impact the qualification process and the overall mortgage terms.</p>
+                <h3 class="font-semibold text-gray-900 dark:text-white">Example</h3>
+                <p>If two individuals, such as spouses or partners, apply for a mortgage together, the Number of Borrowers would be 2. Joint applicants may combine their income and credit histories to potentially qualify for larger loan amounts or better interest rates.</p>
+                
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+          </svg></a>
+            </div>
+            <div data-popper-arrow></div>
+        </div>
+
+
+
+        </label>
+        <input type="number" id="NumBorrowers" name="NumBorrowers"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="2 (example : like Agrat Mohammed & Taha Agrat)  " required>
+    </div>
+    <div>
+      <label for="LoanTermMonths" class="flex mb-2 text-sm font-medium text-gray-900 dark:text-white">Loan Term 
+        
+        <p class="flex items-center text-sm text-gray-500 dark:text-gray-400"><button data-popover-target="popover-click_loan_tearm" data-popover-trigger="click" data-popover-placement="bottom-end" type="button"><svg class="w-4 h-4 ml-2 text-gray-400 hover:text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg><span class="sr-only">Show information</span></button></p>
+        <div data-popover id="popover-click_loan_tearm" role="tooltip" class="absolute z-10 invisible inline-block text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400">
+            <div class="p-3 space-y-2">
+                <h3 class="font-semibold text-gray-900 dark:text-white">Loan Term </h3>
+                <p>The Loan Term refers to the duration over which you agree to repay your mortgage loan. It's usually stated in years and plays a crucial role in determining your monthly payments and the total interest you'll pay.</p>
+                <h3 class="font-semibold text-gray-900 dark:text-white">Convert Years To Months</h3>
+                <div class="flex flex-col">
+                <p>Start Loan  </p>
+                
+                <input id="startDate" class="rounded-none rounded-r-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="date" placeholder="30 years">
+                <p>End Loan  </p>
+                    <input id="endDate" class="rounded-none rounded-r-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="date" placeholder="30 years">
+                    <button id="calculateBtn" class="rounded-md w-full hover:bg-[#2563EB] my-4 bg-blue-500 px-3.5 py-2.5 text-white " type="button">Covert</button>
+                    <div id="result_loan" class="select-auto rounded-none rounded-r-lg h-10 bg-gray-50 border  ">
+                      
+                    </div>
+                </div>
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+          </svg></a>
+            </div>
+            <div data-popper-arrow></div>
+        </div>
+      
+      </label>
+<div class="flex">
+  <span class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
+    Months
+  </span>
+  <input type="text" id="LoanTermMonths" name="LoanTermMonths"  step="5" class="rounded-none rounded-r-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="85">
+</div>
+    </div>
+  
+
+    </div>
+
+
+
+    <div class=" flex items-center gap-6 pt-4 ">
+            <h1 class="header-2 ">Loan Characteristics:</h1>
+            <div class="line_header1"></div>
+    </div>
+    <p class="paragraph_details pt-3">This section allows you to define key characteristics of your mortgage loan. By inputting accurate details, you'll receive a comprehensive analysis of prepayment risk tailored to your loan's specific features. Make sure to enter the information correctly to get the most accurate predictions.</p>
+    <div class="Credit_Range  pt-4 items-center gap-8">
+      <label for="countries" class="flex mb-2 text-sm font-medium text-gray-900 dark:text-white">Select your Credit Range 
+
+        <p class="flex items-center text-sm text-gray-500 dark:text-gray-400"><button data-popover-target="popover-click_Score" data-popover-trigger="click" data-popover-placement="top" type="button"><svg class="w-4 h-4 ml-2 text-gray-400 hover:text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg><span class="sr-only">Show information</span></button></p>
+        <div data-popover id="popover-click_Score" role="tooltip" class="absolute z-10 invisible inline-block text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400">
+            <div class="p-3 space-y-2">
+                <h3 class="font-semibold text-gray-900 dark:text-white">Credit Score</h3>
+                <p>The Credit Score is a numerical representation of your creditworthiness. It plays a crucial role in determining the interest rates you're offered for loans and credit cards. Credit scores typically range from 0 to +900.</p>
+                <h3 class="font-semibold text-gray-900 dark:text-white">How to Choose your Credit Range ?</h3>
+                <ul>
+                  <li class="py-2">Scores between <kbd class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500">0</kbd> and<kbd class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500">650</kbd>  are often categorized as <span class="font-bold text-red-500">Poor</span> . .</li>
+                  <li class="py-2" >Scores falling between <kbd class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500">650</kbd> and <kbd class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500">700</kbd> are considered  <span class="font-bold text-red-300">'Fair'.</span>  </li>
+                  <li class="py-2" >A credit score in the range of <kbd class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500">700</kbd> to <kbd class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500">750</kbd> is deemed  <span class="font-bold text-green-300">'Good'</span>.  </li>
+                  <li class="py-2" >An  <span class="font-bold text-green-500">'Excellent' </span>credit score, spanning <kbd class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500">750</kbd> to <kbd class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500">900</kbd>, reflects a strong credit profile.</li>
+              </ul>
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+          </svg></a>
+            </div>
+            <div data-popper-arrow></div>
+        </div>
+
+
+
+      </label>
+      <select id="Credit_Range" name="Credit_Range" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        <option selected>Please Select your Credit Range </option>
+        <option value="Good">Good </option>
+        <option value="Excellent">Excellent</option>
+        <option value="Fair">Fair</option>
+        <option value="Poor">Poor</option>
+      </select>
+     
+    </div>
+   
+    <div class="thre_div2 grid gap-6 mb-6 pt-4 md:grid-cols-3 ">
+      <div>
+        <label for="Occupancy" class="flex mb-2 text-sm font-medium text-gray-900 dark:text-white">Occupancy
+          
+
+          <p class="flex items-center text-sm text-gray-500 dark:text-gray-400"><button data-popover-target="popover-click_Occupancy" data-popover-trigger="click" data-popover-placement="top" type="button"><svg class="w-4 h-4 ml-2 text-gray-400 hover:text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg><span class="sr-only">Show information</span></button></p>
+          <div data-popover id="popover-click_Occupancy" role="tooltip" class="absolute z-10 invisible inline-block text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400">
+              <div class="p-3 space-y-2">
+                  <h3 class="font-semibold text-gray-900 dark:text-white">Occupancy</h3>
+                  <p>Occupancy refers to how you intend to use the property for which you're seeking a mortgage. The way you plan to occupy the property can influence the terms of the loan.</p>
+                  <h3 class="font-semibold text-gray-900 dark:text-white">How to Choose ?</h3>
+                  <ul>
+                    <li class="py-1"> 
+                       <kbd class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-yellow-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500">
+                        Primary Residence
+                      </kbd>:
+                      A Primary Residence is the home where you live most of the time. This type of occupancy typically qualifies for the most favorable loan terms
+                    </li>
+                    <li class="py-1"> 
+                      <kbd class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-yellow-200 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500">
+                        Investment Property
+                     </kbd>:
+                     An Investment Property is a property you purchase with the intention of generating income, usually through renting it out
+                   </li>
+                   <li class="py-1"> 
+                    <kbd class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-yellow-300 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500">
+                      Second Home
+                   </kbd>:
+                   A Second Home is a property that you use for part of the year while maintaining another primary residence
+                 </li >
+                  </ul>
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+            </svg></a>
+              </div>
+              <div data-popper-arrow></div>
+          </div>
+        
+        </label>
+        <select id="Occupancy" name="Occupancy" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+          <option selected>Select your Occupancy </option>
+          <option value="O">Primary Residence </option>
+          <option value="I">Investment Property</option>
+          <option value="S">Second Home</option>
+          
+        </select>
+       
+      </div>
+    <div>
+
+      <label for="PropertyType" class="flex mb-2 text-sm font-medium text-gray-900 dark:text-white">Property Type 
+        <p class="flex items-center text-sm text-gray-500 dark:text-gray-400"><button data-popover-target="popover-click_Ptype" data-popover-trigger="click" data-popover-placement="bottom-end" type="button"><svg class="w-4 h-4 ml-2 text-gray-400 hover:text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg><span class="sr-only">Show information</span></button></p>
+        <div data-popover id="popover-click_Ptype" role="tooltip" class="absolute z-10 invisible inline-block text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400">
+            <div class="p-3 space-y-2">
+                <h3 class="font-semibold text-gray-900 dark:text-white">Property Type </h3>
+                <p>Property Type refers to the category of the property you're seeking to finance with a mortgage. Different property types can affect loan terms and eligibility.</p>
+
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+          </svg></a>
+            </div>
+            <div data-popper-arrow></div>
+        </div>
+
+      </label>
+      <select id="PropertyType" name="PropertyType" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        <option selected>Select your Property Type </option>
+        <option value="SF">Single-Family </option>
+        <option value="CP">Cooperative</option>
+        <option value="LH">Leasehold</option>
+        <option value="MH">Manufactured Home</option>
+        <option value="CO">Condo</option>
+        <option value="PU">Planned Unit Development</option>
+        
+      </select>
+    </div>
+    <div>
+
+      
+      <label for="LoanPurpose" class="flex mb-2 text-sm font-medium text-gray-900 dark:text-white">Loan Purpose
+        
+      
+        <p class="flex items-center text-sm text-gray-500 dark:text-gray-400"><button data-popover-target="popover-click_Loan_Purpose" data-popover-trigger="click" data-popover-placement="bottom-end" type="button"><svg class="w-4 h-4 ml-2 text-gray-400 hover:text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg><span class="sr-only">Show information</span></button></p>
+        <div data-popover id="popover-click_Loan_Purpose" role="tooltip" class="absolute z-10 invisible inline-block text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400">
+            <div class="p-3 space-y-2">
+                <h3 class="font-semibold text-gray-900 dark:text-white">Loan Purpose</h3>
+                <p>Loan Purpose refers to the reason you are applying for a mortgage or refinancing an existing one. Your loan purpose can impact the terms of the loan.</p>
+                <h3 class="font-semibold text-gray-900 dark:text-white">How to Choose ?</h3>
+                <ul>
+                  <li class="py-1"> 
+                     <kbd class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-yellow-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500">
+                      Purchase
+                    </kbd>:
+                    If you're buying a new home, your loan purpose is a purchase loan.
+                  </li>
+                  <li class="py-1"> 
+                    <kbd class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-yellow-200 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500">
+                      Cash-Out Refinance:
+                   </kbd>:
+                   If you have equity in your home and want to access some of that money, you might opt for a cash-out refinance. 
+                 </li>
+                 <li class="py-1"> 
+                  <kbd class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-yellow-300 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500">
+                    No-Cash Refinance
+                 </kbd>:
+                 A no-cash refinance, also known as a rate-and-term refinance, is when you refinance your existing mortgage to get a better interest rate or loan terms. 
+               </li >
+                </ul>
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+          </svg></a>
+            </div>
+            <div data-popper-arrow></div>
+        </div>
+      
+      </label>
+      <select id="LoanPurpose" name="LoanPurpose" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        <option selected>Select your Loan Purpose </option>
+        <option value="P">Purchase </option>
+        <option value="N">No Cash-out Refinance </option>
+        <option value="C">Cash-out Refinance </option>
+       
+        
+      </select>
+
+
+    </div>
+
+    </div>
+
+
+    <div class="thre_div333 grid gap-6 mb-6 pt-4 md:grid-cols-3 ">
+      <div>
+        <label for="Channel" class="flex mb-2 text-sm font-medium text-gray-900 dark:text-white">Channel 
+
+
+          <p class="flex items-center text-sm text-gray-500 dark:text-gray-400"><button data-popover-target="popover-click_Channel" data-popover-trigger="click" data-popover-placement="bottom-end" type="button"><svg class="w-4 h-4 ml-2 text-gray-400 hover:text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg><span class="sr-only">Show information</span></button></p>
+          <div data-popover id="popover-click_Channel" role="tooltip" class="absolute z-10 invisible inline-block text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400">
+              <div class="p-3 space-y-2">
+                  <h3 class="font-semibold text-gray-900 dark:text-white">Channel</h3>
+                  <p>Channel refers to the way you are obtaining your mortgage loan. The channel you choose can affect your mortgage process and terms.</p>
+                  <h3 class="font-semibold text-gray-900 dark:text-white">How to Choose ?</h3>
+                 
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+            </svg></a>
+              </div>
+              <div data-popper-arrow></div>
+          </div>
+        </label>
+        <select id="Channel" name="Channel" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+          <option selected>Select your Channel </option>
+          <option value="T">Third Party Origination - Not Specified</option>
+          <option value="R">Retail</option>
+          <option value="C">Correspondent</option>
+          <option value="B">Broker</option>
+          
+        </select>
+       
+      </div>
+    <div>
+
+      <label for="Repay_Range" class="flex mb-2 text-sm font-medium text-gray-900 dark:text-white">the mortgage repayment period
+
+        <p class="flex items-center text-sm text-gray-500 dark:text-gray-400"><button data-popover-target="popover-click_Repay_Range" data-popover-trigger="click" data-popover-placement="bottom-end" type="button"><svg class="w-4 h-4 ml-2 text-gray-400 hover:text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg><span class="sr-only">Show information</span></button></p>
+        <div data-popover id="popover-click_Repay_Range" role="tooltip" class="absolute z-10 invisible inline-block text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400">
+            <div class="p-3 space-y-2">
+                <h3 class="font-semibold text-gray-900 dark:text-white">Mortgage Repayment Period</h3>
+                <p>The Mortgage Repayment Period, also known as the loan term, is the duration over which you'll pay back your mortgage loan. This period significantly affects your monthly payments and the total amount you'll repay.</p>
+                <h3 class="font-semibold text-gray-900 dark:text-white">Example</h3>
+                <p> Suppose you have a mortgage with a repayment period of 30 years. This means you'll make monthly payments over 30 years until the loan is fully repaid. Shorter repayment periods result in higher monthly payments but lower overall interest costs, while longer repayment periods usually lead to lower monthly payments but higher total interest payments.</p>
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+          </svg></a>
+            </div>
+            <div data-popper-arrow></div>
+        </div>
+
+
+        
+      </label>
+      <select id="Repay_Range" name="Repay_Range" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        <option selected>Select your repayment period  </option>
+        <option value="0-4yrs ">0 - 4 years </option>
+        <option value="4-8yrs">4 --- 8 years</option>
+        <option value="8-12yrs">8 --- 12 years</option>
+        <option value="12-16yrs">12 --- 16 years</option>
+        <option value="16-20yrs">16 --- 20 years</option>
+        <option value="20-plus-years">20+ years </option>
+  
+        
+      </select>
+    </div>
+    <div>
+
+      
+      <label for="LTV_Range" class="flex mb-2 text-sm font-medium text-gray-900 dark:text-white">LTV%
+        <p class="flex items-center text-sm text-gray-500 dark:text-gray-400"><button data-popover-target="popover-click_LTV" data-popover-trigger="click" data-popover-placement="top" type="button"><svg class="w-4 h-4 ml-2 text-gray-400 hover:text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg><span class="sr-only">Show information</span></button></p>
+          <div data-popover id="popover-click_LTV" role="tooltip" class="absolute z-10 invisible inline-block text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400">
+              <div class="p-3 space-y-2">
+                  <h3 class="font-semibold text-gray-900 dark:text-white">
+                    Loan-to-Value Ratio (LTV%)</h3>
+                  <p>The Loan-to-Value (LTV) Ratio is a crucial metric that compares the amount of your mortgage loan to the appraised value of the property you're purchasing or refinancing. </p>
+                  <h3 class="font-semibold text-gray-900 dark:text-white">How to Choose ?</h3>
+                  <ul>
+                    <li class="py-2"> 
+                       <kbd class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-orange-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500">
+                        LOW: 0 - 25%
+                      </kbd>:
+                    </li>
+                    <li class="py-2"> 
+                      <kbd class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-orange-500 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500">
+                        MEDIUM: 25 - 50%
+                     </kbd>:
+                   </li>
+                   <li class="py-2"> 
+                    <kbd class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-green-500 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500">
+                      HIGH: +50%
+                   </kbd>:
+                 </li >
+                  </ul>
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+            </svg></a>
+              </div>
+              <div data-popper-arrow></div>
+          </div>
+      
+      </label>
+      <select id="LTV_Range" name="LTV_Range" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        <option selected>Select your LTV  </option>
+        <option value="LOW">LOW        </option>
+        <option value="MEDIUM">MEDIUM        </option>
+        <option value="HIGH">HIGH        </option>
+                 
+       
+        
+      </select>
+
+
+    </div>
+
+    </div>
+    <div class="PPM flex pt-4 pb-2 items-center gap-8">
+      <label class="input_label flex" for="PPM">Does your mortgage have a prepayment penalty?
+        
+        <p class="flex items-center text-sm text-gray-500 dark:text-gray-400"><button data-popover-target="popover-click_Penalty" data-popover-trigger="click" data-popover-placement="top" type="button"><svg class="w-4 h-4 ml-2 text-gray-400 hover:text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg><span class="sr-only">Show information</span></button></p>
+        <div data-popover id="popover-click_Penalty" role="tooltip" class="absolute z-10 invisible inline-block text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400">
+            <div class="p-3 space-y-2">
+                <h3 class="font-semibold text-gray-900 dark:text-white">
+                  Prepayment Penalty</h3>
+                <p>A prepayment penalty is a fee that some mortgages might charge if you pay off your loan early or make substantial extra payments </p>
+                <h3 class="font-semibold text-gray-900 dark:text-white">Example</h3>
+                  <p>Let's say you have a mortgage with a prepayment penalty clause. The penalty might state that if you pay off the entire loan within the first three years, you'll owe an additional 2% of the remaining balance.
+
+                    For instance, if your remaining balance is $200,000 and you decide to sell your home and pay off the loan after two years, you would owe an extra $4,000 (2% of $200,000) as a prepayment penalty.</p>
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+          </svg></a>
+            </div>
+            <div data-popper-arrow></div>
+        </div>
+      
+      </label>
+      <div class="options flex items-center gap-4">
+            <div class="flex items-center ">
+                <input id="PPM" type="radio" value="Y" name="PPM" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label for="PPM" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Yes</label>
+            </div>
+            <div class="flex items-center">
+                <input checked id="PPM" type="radio" value="N" name="PPM" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label for="PPM" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">No</label>
+            </div>
+      </div>
+      </select>
+    </div>
+
+    
+  </main>
+  <div  class="flex justify-center pb-10">
+    <button id="PredictBTNBTN" type="submit"  class="rounded-md w-100 bg-[#2563EB] px-3.5 py-2.5 text-white text-sm font-semibold shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Predict Now  <span aria-hidden="true">→</span> </button>
+  </div>
+
+</form>
+</div>
+
+
+
+<!-- <div id="popup" class="hidden fixed inset-0 flex justify-center items-center bg-black bg-opacity-50">
+  
+
+    <div id="loading" class="hidden absolute -translate-x-1/2 -translate-y-1/2 top-2/4 left-1/2">
+      <svg aria-hidden="true" class="inline w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
+        <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
+    </svg>
+      <span class="text-white font-bold">Loading...</span>
+    </div>
+  
+    <div id="results" class=" hidden relative bg-white w-[47rem] h-[26rem] p-6 rounded-lg shadow-lg">
+        <div class="content  p-11">
+          <div class="flex lg:flex-1 justify-center">
+            <div  class="logo flex flex-row gap-3 items-center">
+                <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="logo" class="">
+                <a href="index.html" class="flex flex-row gap-2 font-roboto-slab ">
+                    <p class="text-xl font-semibold ">Mortgage </p>
+                    <p class="text-xl font-extrabold text-[#2563EB] ">Guard </p>
+
+                  
+                </a>
+            </div>
+            
+          </div>
+          <div class="flex justify-center items-center">
+          <p id="PredictionText">{{ results }}</p>
+        </div>
+          <img class=" lettersletters absolute" src="{{ url_for('static', filename='assets/results.svg') }} " alt="" srcset="">
+          <a href="{{ url_for('predict_datapoint') }}"><img id="closeclose" src="{{ url_for('static', filename='assets/close.svg') }}" alt="" srcset=""></a>
+
+        </div>
+
+
+
+
+    </div>
+</div> -->
+
+<div class="bg-white rounded-lg shadow m-4 " >
+  <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+    <div class="font-semibold" >
+        Your Prediction Results  
+    </div>
+    <div class="flex justify-center items-center">
+      <p class="font-light " >{{results}}</p>
+ 
+    </div>
+    
+
+
+  </div>
+</div>
+
+<footer class="bg-white rounded-lg shadow m-4">
+  <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+      <div class="mfooter sm:flex sm:items-center sm:justify-between">
+          <div class="flex lg:flex-1">
+              <div class="logo flex flex-row gap-3 items-center">
+                  <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="logo" class="">
+                  <div class="flex flex-row gap-2 font-roboto-slab ">
+                      <p class="text-xl font-semibold ">Mortgage </p>
+                      <p class="text-xl font-extrabold text-primary ">Guard </p>
+
+                    
+                  </div>
+              </div>
+          </div>
+          <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+              <li>
+                  <a href="#" class="mr-4 hover:underline md:mr-6 ">About</a>
+              </li>
+              <li>
+                  <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
+              </li>
+              <li>
+                  <a href="#" class="mr-4 hover:underline md:mr-6 ">Licensing</a>
+              </li>
+              <li>
+                  <a href="#" class="hover:underline">Contact</a>
+              </li>
+          </ul>
+      </div>
+      <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+      <span class="items-center justify-center gap-1  flex text-sm text-gray-500 sm:text-center dark:text-gray-400">© warf23 <a href="" class="hover:underline">Team B™</a>. All Rights Reserved.</span>
+  </div>
+</footer>
+
+
+<script src="/dist/output.js"></script>
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/datepicker.min.js"></script>
+       
+    
+    
+<script>
+  const openMobileMenuButton = document.querySelector('#openMobileMenuButton');
+  const mobileMenu = document.querySelector('#mobileMenu');
+  const Closebtn = document.querySelector('#Closebtn');
+
+  openMobileMenuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  Closebtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  function closePopup() {
+    document.getElementById('popup').classList.add('hidden');
+  }
+
+  document.getElementById('popup').addEventListener('click', function (event) {
+    if (event.target === this) {
+      closePopup();
+    }
+  });
+
+</script>
+<script>
+
+  function handlePrediction() {
+   
+
+    const popup = document.getElementById('popup');
+    const loading = document.getElementById('loading');
+    const results = document.getElementById('results');
+    const mainContent = document.getElementById('main-content');
+
+    popup.classList.remove('hidden');
+    loading.classList.remove('hidden');
+    mainContent.classList.add('blur');
+
+    setTimeout(function () {
+      loading.classList.add('hidden');
+      // results.textContent = "The prediction is: {{ results }}"; // Replace with actual results
+
+      mainContent.classList.remove('blur');
+      results.classList.remove('hidden');
+    }, 2500);
+  }
+</script>
+
+
+
+
+
+<script>
+  const convertBtn = document.getElementById('convertBtn');
+  const resultDiv = document.getElementById('result');
+
+  convertBtn.addEventListener('click', () => {
+      const yearsInput = document.getElementById('years');
+      const years = parseFloat(yearsInput.value);
+
+      if (!isNaN(years)) {
+          const months = years * 12;
+          resultDiv.textContent = `${months} months.`;
+      } else {
+          resultDiv.textContent = 'Please enter a valid number of years.';
+      }
+  });
+</script>
+
+<script>
+  document.getElementById('calculateBtn').addEventListener('click', function() {
+      const startDateInput = document.getElementById('startDate');
+      const endDateInput = document.getElementById('endDate');
+
+      const startDate = new Date(startDateInput.value);
+      const endDate = new Date(endDateInput.value);
+
+      if (!isNaN(startDate) && !isNaN(endDate) && startDate < endDate) {
+          const loanTermMillis = endDate - startDate;
+          const loanTermYears = loanTermMillis / (1000 * 60 * 60 * 24 * 365);
+          const loanTermMonths = loanTermYears * 12;
+
+          const result = `${loanTermMonths.toFixed(0)} months.`;
+
+          document.getElementById('result_loan').textContent = result;
+      } else {
+          document.getElementById('result_loan').textContent = 'Please enter valid start and end dates, ensuring the end date is after the start date.';
+      }
+  });
+</script>
+
+
+        
+    
+    
+    </body>
+    </html>

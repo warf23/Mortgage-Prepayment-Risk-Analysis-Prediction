@@ -1,0 +1,402 @@
+/* Import Roboto Slab Font */
+@import 'typeface-roboto-slab';
+
+.custom-absolute-top {
+    position: absolute;
+    left: 55rem;
+    bottom: 8rem;
+    /* right: 0; */
+    margin: 2rem;
+}
+.svg-lawi{
+    
+    margin-top: -9rem;
+  
+}
+.bank{
+    position: absolute;
+    z-index: 2;
+    top: -18rem;
+    left: -108px;
+}
+
+.line_bank_to_bank{
+    position: absolute;
+    z-index: 1;
+    top: 13rem;
+    left: 5rem;
+}
+
+@media (max-width: 767px) {
+   
+    
+  }
+ 
+
+
+/* Extra Small Devices (Phones) */
+@media only screen and (max-width: 576px) {
+  
+    header{
+        padding-left:2rem ;
+        padding-right:1rem ;
+    }
+    .main-content{
+        padding-top: 2.5rem;
+    }
+    .cc{
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .line_header {
+        width: 134.001px;
+    }
+    #PredictBTNBTN{
+        width: 80%;
+    }
+    .mfooter{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .mememe{
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+    }
+    #results{
+        width: 71%;
+    height: 55%;
+    }
+    .lettersletters{
+        right: 5rem;
+        top: 16rem;
+        width: 11rem;
+    }
+    #closeclose{
+        position: absolute;
+        top: 10px;
+        right: 21px;
+        width: 1rem;
+    
+    }
+    .svg-lawi {
+        display: none;
+       }
+    .laptoop{
+        display: none;
+    }
+
+
+}
+
+/* Small Devices (Tablets) */
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+    .cc{
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    #PredictBTNBTN{
+        width: 50%;
+    }
+    header{
+        padding-left:2rem ;
+        padding-right:1rem ;
+    }
+    #results{
+        width: 71%;
+    height: 55%;
+    }
+    .lettersletters{
+        right: 6rem;
+        top: 15rem;
+        width: 12rem;
+    }
+    #closeclose{
+        position: absolute;
+        top: 10px;
+        right: 21px;
+        width: 1rem;
+    
+    }
+    .svg-lawi {
+        display: none;
+       }
+       .laptoop{
+        display: none;
+    }
+}
+
+/* Medium Devices (Laptops, Desktops) */
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+    .cc{
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    #PredictBTNBTN{
+        width: 40%;
+    }
+    header{
+        padding-left:2rem ;
+        padding-right:1rem ;
+    }
+    #results{
+        width: 71%;
+    height: 55%;
+    }
+    .lettersletters{
+        right: -6rem;
+        top: 8rem;
+        width: 15rem;
+    }
+    #closeclose{
+        position: absolute;
+        top: 10px;
+        right: 21px;
+        width: 1rem;
+    
+    }
+}
+
+/* Large Devices (Large Laptops, Desktops) */
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+    .cc{
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+    #results{
+        
+    }
+    #PredictBTNBTN{
+        width: 30%;
+    }
+    .lettersletters{
+        right: -6rem;
+        top: 8rem;
+        width: 15rem;
+    }
+    #closeclose{
+        position: absolute;
+        top: 10px;
+        right: 21px;
+        width: 1rem;
+    
+    }
+    .svg-lawi {
+        display: none;
+       }
+       .cc{
+   
+        padding-left: 79px;
+        padding-right: 89px;
+    }
+}
+.laptoop img{
+    width: 100%;
+    height: 100%;
+}
+.phoone img{
+    width: 100%;
+    height: 100%;
+}
+
+/* Extra Large Devices (Large Desktops) */
+@media only screen and (min-width: 1201px) {
+  /* Your CSS rules for extra large devices */
+  #PredictBTNBTN{
+    width: 30%;
+}
+.lettersletters{
+    right: -9rem;
+    top: 5rem;
+    width: 18rem;
+}
+#closeclose{
+    position: absolute;
+    top: 10px;
+    right: 21px;
+    width: 1rem;
+
+}
+.cc{
+   
+    padding-left:132px ;
+    padding-right:289px ;
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.header-1{
+    
+font-family: Roboto Slab;
+font-size: 24px;
+font-style: normal;
+font-weight: 500;
+line-height: 148.885%; /* 35.732px */
+letter-spacing: 8.16px;
+} 
+.header-2{
+   
+font-family: Roboto Slab;
+font-size: 24px;
+font-style: normal;
+font-weight: 500;
+line-height: 148.885%; /* 35.732px */
+letter-spacing: 6.16px;
+} 
+
+.line_header{
+    width: 810.001px;
+height: 0.5px;
+background: rgba(0, 0, 0, 0.40);
+}
+.line_header1{
+    width: 700.001px;
+height: 0.5px;
+background: rgba(0, 0, 0, 0.40);
+}
+.paragraph_details{
+color: rgba(0, 0, 0, 0.50);
+font-family: Roboto Slab;
+font-size: 12px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
+
+.input_label{
+color: #000;
+font-family: Roboto Slab;
+font-size: 16px;
+font-style: normal;
+font-weight: 800;
+line-height: normal;
+}
+
+.blur {
+    filter: blur(5px); /* Adjust the amount of blur as needed */
+}
+
+.wrapper11{
+    width:200px;
+    height:60px;
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+}
+.circle{
+    width:20px;
+    height:20px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: #fff;
+    left:15%;
+    transform-origin: 50%;
+    animation: circle .5s alternate infinite ease;
+}
+
+
+/* @keyframes circle{
+    0%{
+        top:60px;
+        height:5px;
+        border-radius: 50px 50px 25px 25px;
+        transform: scaleX(1.7);
+    }
+    40%{
+        height:20px;
+        border-radius: 50%;
+        transform: scaleX(1);
+    }
+    100%{
+        top:0%;
+    }
+}
+.circle:nth-child(2){
+    left:45%;
+    animation-delay: .2s;
+}
+.circle:nth-child(3){
+    left:auto;
+    right:15%;
+    animation-delay: .3s;
+}
+.shadow{
+    width:20px;
+    height:4px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,.5);
+    position: absolute;
+    top:62px;
+    transform-origin: 50%;
+    z-index: -1;
+    left:15%;
+    filter: blur(1px);
+    animation: shadow .5s alternate infinite ease;
+}
+
+@keyframes shadow{
+    0%{
+        transform: scaleX(1.5);
+    }
+    40%{
+        transform: scaleX(1);
+        opacity: .7;
+    }
+    100%{
+        transform: scaleX(.2);
+        opacity: .4;
+    }
+}
+.shadow:nth-child(4){
+    left: 45%;
+    animation-delay: .2s
+}
+.shadow:nth-child(5){
+    left:auto;
+    right:15%;
+    animation-delay: .3s;
+}
+.wrapper11 span{
+    position: absolute;
+    top:75px;
+    font-family: 'Lato';
+    font-size: 20px;
+    letter-spacing: 12px;
+    color: #fff;
+    left:15%;
+} */
+
+
+
+
