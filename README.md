@@ -1,5 +1,4 @@
 ﻿# Final_Intership_TechnoLabs_END_TO_END_Mortgage_Risk 💡 
-https://github.com/warf23/Final_Intership_Technocolabs_Softwares_END_TO_END_Mortgage_Risk/assets/54336050/d80c6310-5d44-4cc2-a800-c8679d269df4
 
 
 
@@ -64,12 +63,16 @@ To use this project, follow these steps:
    cd Final_Intership_Technocolabs_Softwares_END_TO_END_Mortgage_Risk
    ```
 3.  Run the Python Application: Execute the following command to run the web application:
-     ```bash
+   ```bash
    python application.py
    ```
 
-
+# Running ON AWS EC2  
+https://github.com/warf23/Final_Intership_Technocolabs_Softwares_END_TO_END_Mortgage_Risk/assets/54336050/b7f54d28-6f6c-4bf2-a402-afe0f7d77963
 # Project Overview 🏡📊
+
+
+
 
 
 
