@@ -25,6 +25,9 @@ To set up the required environment, follow these steps:
    ```
 
    This command activates the `Intershipvenv` virtual environment.
+
+
+
    
 ## Ignoring Virtual Environment
 
@@ -59,6 +62,11 @@ To use this project, follow these steps:
    ```bash
    cd Final_Intership_Technocolabs_Softwares_END_TO_END_Mortgage_Risk
    ```
+3.  Run the Python Application: Execute the following command to run the web application:
+     ```bash
+   python application.py
+   ```
+https://www.capcut.com/view/7280542477767934465?__action_from=my_draft&__from_page=work_space&from_page=work_space&enter_from=project&workspaceId=7273539427119464450&type=1&from=task_list
 
 # Project Overview 🏡📊
 
