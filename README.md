@@ -51,16 +51,43 @@ To use this project, follow these steps:
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/warf23/Final_Intership_TechnoLabs_END_TO_END_Mortgage_Risk.git
+   git clone https://github.com/warf23/Final_Intership_Technocolabs_Softwares_END_TO_END_Mortgage_Risk.git
    ```
-
-  
-
+   
 2. Change to the project directory:
 
    ```bash
-   cd Final_Intership_TechnoLabs_END_TO_END_Mortgage_Risk
+   cd Final_Intership_Technocolabs_Softwares_END_TO_END_Mortgage_Risk
    ```
+
+# Project Overview 🏡📊
+
+## Project Name
+Mortgage Prepayment Risk Analysis
+
+## Project Description 📝
+The Mortgage Prepayment Risk Analysis project is aimed at developing a comprehensive tool to assess and predict the risk of prepayment associated with mortgage loans. Prepayment risk refers to the likelihood that borrowers will pay off their mortgage loans before the scheduled maturity date, typically through refinancing or early repayment.
+
+## Purpose of the Project 🎯
+The primary purpose of this project is to provide valuable insights into prepayment risk for mortgage lenders, financial institutions, and investors in mortgage-backed securities (MBS). Understanding and accurately predicting prepayment risk is crucial for making informed lending decisions, managing investments, and optimizing mortgage portfolio performance.
+
+## Key Objectives 🌟
+- Develop a predictive model: Create a robust machine learning algorithm that leverages historical mortgage data to predict the likelihood and timing of mortgage prepayments.
+- User-friendly interface: Design a user-friendly web application that allows users to input loan and borrower information, obtain prepayment risk assessments, and make data-driven decisions.
+- Risk mitigation: Assist mortgage lenders and investors in identifying high-risk loans, optimizing portfolios, and implementing risk mitigation strategies.
+
+## Target Audience 🎯👥
+This project's target audience includes:
+- Mortgage Lenders: Banks, credit unions, and lending institutions seeking to assess and manage the prepayment risk associated with their mortgage portfolios.
+- Investors: Individuals and organizations investing in mortgage-backed securities (MBS) who want to make informed investment decisions.
+- Financial Analysts: Professionals in the finance industry looking for a tool to analyze prepayment risk and its impact on mortgage-related investments.
+- Homebuyers: Potential homebuyers interested in understanding the factors that influence mortgage prepayment and refinancing decisions.
+
+## Expected Outcomes 📈🔍
+The Mortgage Prepayment Risk Analysis project aims to provide a practical and data-driven solution for assessing and managing prepayment risk in mortgage lending and investment. By offering a user-friendly web application and predictive model, users can make informed decisions to optimize their mortgage portfolios and reduce financial exposure to prepayment risk.
+
+  
+
 
 
 
