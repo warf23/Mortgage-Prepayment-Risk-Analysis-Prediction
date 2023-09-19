@@ -1,4 +1,5 @@
 ﻿# Final_Intership_TechnoLabs_END_TO_END_Mortgage_Risk 💡 
+https://github.com/warf23/Final_Intership_Technocolabs_Softwares_END_TO_END_Mortgage_Risk/assets/54336050/d80c6310-5d44-4cc2-a800-c8679d269df4
 
 
 
@@ -72,7 +73,7 @@ To use this project, follow these steps:
 
 
 
-https://github.com/warf23/Final_Intership_Technocolabs_Softwares_END_TO_END_Mortgage_Risk/assets/54336050/d80c6310-5d44-4cc2-a800-c8679d269df4
+
 
 
 ## Project Name
