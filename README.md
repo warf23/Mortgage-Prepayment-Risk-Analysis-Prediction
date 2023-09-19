@@ -66,9 +66,14 @@ To use this project, follow these steps:
      ```bash
    python application.py
    ```
-![https://www.capcut.com/view/7280542477767934465?__action_from=my_draft&__from_page=work_space&from_page=work_space&enter_from=project&workspaceId=7273539427119464450&type=1&from=task_list]
+
 
 # Project Overview 🏡📊
+
+
+
+https://github.com/warf23/Final_Intership_Technocolabs_Softwares_END_TO_END_Mortgage_Risk/assets/54336050/d80c6310-5d44-4cc2-a800-c8679d269df4
+
 
 ## Project Name
 Mortgage Prepayment Risk Analysis
