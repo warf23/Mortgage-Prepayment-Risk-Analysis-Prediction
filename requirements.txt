@@ -1,18 +1,9 @@
-pandas 
-numpy 
-seaborn 
+pandas
+numpy
+seaborn
 dill
 matplotlib
-pickle
-
-
-
-
 scikit-learn
-catboost
 xgboost
 Flask
-
-#-e .
-
--e .
+joblib
