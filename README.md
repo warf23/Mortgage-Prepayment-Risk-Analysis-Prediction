@@ -4,7 +4,7 @@
 
 This repository contains the code and resources for deploying a machine learning project end-to-end. The project is implemented using Python 3.10.
 
-## Setting up the Environment
+##   Setting up the Environment
 
 To set up the required environment, follow these steps:
 
